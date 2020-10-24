@@ -1,5 +1,5 @@
 # Invisible_City
-It's for making invisible site with Invisible Cities, _Italo Calvino_, 1972
+It's for making invisible site with _Invisible Cities_, Italo Calvino, 1972
 url : https://song-cool.github.io/Invisible_City/
 
 
