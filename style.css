@@ -1,0 +1,15 @@
+body {
+    margin: 0px;
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    src: url('https:spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css') format('text/css');
+    font-weight: bold;
+    /*font-style: normal;*/
+}
+
+body,
+html {
+    overflow: hidden;
+}
