@@ -1,17 +1,11 @@
-/*
-홈화면 입니다.    
-*/
-
-
 function Banner() {
 
-    var keyword = "ARGIA, CITYS & THE DEAD";
+    var keyword = "ARGIA, CITYS & THE DEAD"; // 맨트 길어지면 문제가 생김
 
     var fontSizeis_to = 70;
     var fontSizeis;
     var canvas;
     var context;
-    var state = 0;
     var fontRotate = 0;
 
     var start_xpt = 100; // FIXME: 시점좌표, 이것도 비율로 할 필요가 있음
@@ -59,7 +53,7 @@ function Banner() {
         bgCanvas.height = 2 * window.innerHeight;
         canvass.width = window.innerWidth;
         canvass.height = 2 * window.innerHeight;
-        
+
         canvas.addEventListener('mousemove', MouseMove, false);
         canvas.addEventListener('mouseout', MouseOut, false);
         canvas.addEventListener('mousedown', MouseDown, false);
@@ -218,13 +212,6 @@ function Banner() {
     }
 
 
-
-
-
-
-
-
-
     // FIXME:###################################################################################################
 
 
@@ -332,6 +319,7 @@ function Banner() {
         sinPoint = sinPoint * 30 + 10;
 
 
+
         drawString(context, "click to visit", mouse.x - 100, mouse.y, '#000', fontRotate, 'Gloria Hallelujah', sinPoint);
         var windowHeight = 0;
         var windowWidth = 0;
@@ -382,15 +370,6 @@ function Banner() {
     var Click = function(e) {
         mouseClickCount++;
     }
-    
-        //Clear the on screen canvas
-
-    var MouseDown = function(e) {
-        fontRotate = 30;
-    }
-    var MouseUp = function(e) {
-        fontRotate = 0;
-    }
 
     var remap = function(from, fromMin, fromMax, toMin, toMax) {
         var fromAbs = from - fromMin;
@@ -407,6 +386,13 @@ function Banner() {
     }
 
     //Clear the on screen canvas
+
+    var MouseDown = function(e) {
+        fontRotate = 5;
+    }
+    var MouseUp = function(e) {
+        fontRotate = 0;
+    }
 
 
 
