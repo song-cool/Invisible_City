@@ -1,35 +1,18 @@
-/*정리타임!!
-    1. 켄버스로 글씨쓰기
-    2. 
-
-    
+/*
+홈화면 입니다.    
 */
-
-/*What makes Argia different from other cities is that
-it has earth instead of air. The streets are completely
-filled with dirt, clay packs the rooms to the ceiling,
-on every stair another stairway is set in negative,
-over the roofs of the houses hang layers of rocky terrain like skies with clouds. We do not know if the
-inhabitants can move about the city, widening the
-worm tunnels and the crevices where roots twist:
-the dampness destroys people's bodies and they have
-scant strength; everyone is better off remaining still,
-prone; anyway, it is dark.
-From up here, nothing of Argia can be seen; some
-say, "It's down below there," and we can only believe them. The place is deserted. At night, putting
-your ear to the ground, you can sometimes hear a
-door slam. */
 
 
 function Banner() {
 
-    var keyword = "ARGIA, CITYS & THE DEAD"; // 맨트 길어지면 문제가 생김
+    var keyword = "ARGIA, CITYS & THE DEAD";
 
     var fontSizeis_to = 70;
     var fontSizeis;
     var canvas;
     var context;
     var state = 0;
+    var fontRotate = 0;
 
     var start_xpt = 100; // FIXME: 시점좌표, 이것도 비율로 할 필요가 있음
     var start_ypt = 400;
@@ -76,9 +59,11 @@ function Banner() {
         bgCanvas.height = 2 * window.innerHeight;
         canvass.width = window.innerWidth;
         canvass.height = 2 * window.innerHeight;
-
+        
         canvas.addEventListener('mousemove', MouseMove, false);
         canvas.addEventListener('mouseout', MouseOut, false);
+        canvas.addEventListener('mousedown', MouseDown, false);
+        canvas.addEventListener('mouseup', MouseUp, false);
 
         canvas.addEventListener('click', Click, false);
 
@@ -347,7 +332,7 @@ function Banner() {
         sinPoint = sinPoint * 30 + 10;
 
 
-        drawString(context, "click to visit", mouse.x - 100, mouse.y, '#000', 0, "Spoqa Han Sans", sinPoint);
+        drawString(context, "click to visit", mouse.x - 100, mouse.y, '#000', fontRotate, 'Gloria Hallelujah', sinPoint);
         var windowHeight = 0;
         var windowWidth = 0;
         if (mouseClickCount <= 2) { // 2가 초기값임.
@@ -396,6 +381,15 @@ function Banner() {
 
     var Click = function(e) {
         mouseClickCount++;
+    }
+    
+        //Clear the on screen canvas
+
+    var MouseDown = function(e) {
+        fontRotate = 30;
+    }
+    var MouseUp = function(e) {
+        fontRotate = 0;
     }
 
     var remap = function(from, fromMin, fromMax, toMin, toMax) {
