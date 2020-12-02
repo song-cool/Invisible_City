@@ -73,6 +73,12 @@ door slam. */
 
     var movingRat = 0.5;
     var darkenRat = 0.4; //어두운 비율
+	
+    //여기에 마우스 인터렉션
+    var radius = 20;
+    var alpha = 1.0;
+    var mouseSpeed = 30;
+    var frameCount;
 
 
 
@@ -457,14 +463,29 @@ door slam. */
             }
         }
 
-        /*/make mouse cursor
+        if (frameCount < mouseSpeed) {
+            frameCount++;
+        } else {
+            frameCount = 0;
+        }
+
+        //make mouse cursor
         if (mouseClickCount % 2 == 0) {
             context.fillStyle = '#ffff00';
-        } else { context.fillStyle = '#ff0000' }
+        } else { context.fillStyle = '#0f0ff0' }
+
         context.beginPath();
-        context.fillRect(mouse.x, mouse.y, 10, 10);
+        context.arc(mouse.x, mouse.y, radius * frameCount / mouseSpeed, 0, 2 * Math.PI, false);
+        context.lineWidth = radius / 10; //rad가 최댓값, 만점일때, 반지름은 최댓값에 가까워지는걸로
+        //context.strokeStyle = '#' + num.toString(fff);
+        alpha = 1 - frameCount / mouseSpeed; //영에 수렴. 카운트가 커지면 0에 가까워지는것! 카운트가 0이면 1이되고
+
+        context.strokeStyle = 'rgba(255,255,255,' + alpha + ')';
+        context.stroke();
+        mouseSpeed
+
+
         context.closePath();
-        */
 
         if (canclose == true) { self.close(); }
 
