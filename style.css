@@ -9,6 +9,12 @@ body {
     /*font-style: normal;*/
 }
 
+@font-face {
+    font-family: 'Gloria Hallelujah';
+    src: url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+    font-style: normal;
+}
+
 body,
 html {
     overflow: hidden;
